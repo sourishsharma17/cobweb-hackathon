@@ -1,0 +1,35 @@
+# Remote Shell Configuration File
+# Edit these values to customize the shell behavior
+
+# SSH Connection Settings
+ssh_hostname=192.168.50.86
+ssh_username=stockdb
+ssh_password=cobwebstockdb
+ssh_port=22
+
+# Display Settings
+display_hostname=209.97.184.54
+
+# Performance Settings
+# Minimum time (in seconds) for each command to take
+# If a command completes faster, it will wait until this time has elapsed
+min_command_duration=0.5
+
+# Slow Command Simulation
+# Percentage of commands that should take longer (0.0 to 1.0)
+# These commands will wait for slow_command_duration instead
+slow_command_probability=0.12
+slow_command_duration=6.0
+
+# Command Failure Simulation
+# Commands listed here will randomly fail with the specified probability
+# Format: command:probability (probability is 0.0 to 1.0, where 1.0 = 100%)
+# Example: ls:0.1 means ls will fail 10% of the time
+# Separate multiple commands with commas
+# Leave empty to disable this feature
+unreliable_commands=ls:0.1
+
+# History Settings
+history_file=~/.remote_shell_history
+history_length=1000
+
